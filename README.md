@@ -6,7 +6,9 @@
 |------------|---------|-------------|
 |    2.3.3   |  5.0.2 | SQLite Postgres (Heroku) |
 
-#### Link do wdrożonej aplikacji https://antywirpak.herokuapp.com/
+#### Link do aplikacji zaliczeniowej https://antywirusy.herokuapp.com/
+##### Link do wdrożonej aplikacji https://antywirpak.herokuapp.com/
+
 
 Strona pozwala dodawać nowe wpisy z antywirusami wraz z komentarzami oraz ma możliwość oceny artykułów.
 

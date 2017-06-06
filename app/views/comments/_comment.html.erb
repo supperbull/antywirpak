@@ -1,0 +1,11 @@
+
+
+<b><%= comment.user.email %> says:</b> <%= comment.body %>
+
+
+  <%if comment.user==current_user %>
+  <%= link_to 'Delete', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+               <% end %>
+</p>

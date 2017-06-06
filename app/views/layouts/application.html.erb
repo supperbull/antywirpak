@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Antywirpak</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Antywirusy</title>
+    <%= csrf_meta_tags %>
 
-<%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-</body>
+  <body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to "Antywirusy", articles_path, class: "navbar-brand" %>
+                <%if !user_signed_in? %>
+                  <%= link_to"Login", new_user_session_path, class: "navbar-brand" %>
+                <% end %>
+
+<%if user_signed_in? %>
+    <%= link_to "New antywirus", new_article_path, class: "navbar-brand" %>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "navbar-brand") %>
+<% end %>
+            </div>
+
+        </div>
+    </nav>
+<br/><br/>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+              <div class="col-lg-12">
+                  <h1 class="page-header">
+                      Antywirus
+                  </h1>
+              </div>
+
+              <%= yield %>
+
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+        </footer>
+    </div>
+  </body>
 </html>
